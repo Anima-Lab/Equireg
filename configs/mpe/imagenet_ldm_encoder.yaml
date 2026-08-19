@@ -1,0 +1,7 @@
+# Requires a CompVis latent-diffusion checkout on sys.path.
+# Set EQUIREG_LDM_ROOT to your clone's repository root, or add
+#   ldm_root: /path/to/your/latent-diffusion
+# below. EquiReg vendors no upstream code — see the README.
+type: ldm_autoencoder
+config: ../../models/ldm/cin256-v2/config.yaml
+checkpoint: ../../models/ldm/cin256-v2/model.ckpt

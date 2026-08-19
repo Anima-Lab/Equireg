@@ -1,0 +1,2 @@
+type: checkpoint
+checkpoint: ../../models/MPE/imagenet_rot90_CNN.pt

@@ -1,0 +1,2 @@
+type: checkpoint
+checkpoint: ../../models/MPE/ffhq256_contrastive_CNN.pt

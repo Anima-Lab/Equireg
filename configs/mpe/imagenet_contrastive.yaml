@@ -1,0 +1,2 @@
+type: checkpoint
+checkpoint: ../../models/MPE/imagenet_contrastive_CNN.pt

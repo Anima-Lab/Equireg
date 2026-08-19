@@ -1,0 +1,10 @@
+# No published SITCOM EquiReg numbers exist to reproduce — see the README's
+# SITCOM section for why. This config is a starting point, not a pinned
+# reproduction of published results.
+mpe_config: ../../configs/mpe/ffhq_ldm_encoder.yaml
+group: hflip
+form: equi
+equi_alpha: 0.01
+equi_freq: 1.0
+equi_schedule: constant
+reduction: sqnorm

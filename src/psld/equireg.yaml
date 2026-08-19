@@ -1,0 +1,30 @@
+# PSLD + EquiReg. equi_alpha: 0.01 was filled by analogy with the value used
+# in the paper's pixel-space (DPS) experiments; it
+# has no published PSLD-specific provenance. The original sweep scripts ranged
+# equi_alpha from 0.001 to 0.5 with no single canonical setting recorded.
+# Treat it as a starting point to tune, not a reproduction target.
+# equi_alpha values are NOT comparable across solvers — the reductions differ.
+# See README.md.
+#
+# f: solver_decoder — the penalty is computed on the LATENT pred_z_0 with the
+# solver's own model.differentiable_decode_first_stage, matching
+# $SRC/src/psld/ldm/models/diffusion/psld_equi.py:454-456. That decoder exists
+# only on the live solver model, so there is no mpe_config here; bind it
+# yourself once the model is loaded (reg.f =
+# model.differentiable_decode_first_stage — see the README).
+# (SITCOM differs: it applies an MPE encoder to a pixel-space x_0_hat, so it
+# uses mpe_config.)
+#
+# legacy_psld_cutoff reproduces the source's equi_schedule='cutoff'; it
+# requires a total_steps: pass EquiReg(total_steps=...) or reg(x, step=...,
+# total_steps=...) with your DDIM step count.
+f: solver_decoder
+group: hflip
+form: equi
+equi_alpha: 0.01
+# equi_freq is inert under legacy_psld / legacy_psld_cutoff: those schedules
+# fire on every iteration and never read it. Kept for symmetry with the other
+# config in src/. It takes effect only under 'constant' / 'cutoff'.
+equi_freq: 0.1
+equi_schedule: legacy_psld
+reduction: norm
