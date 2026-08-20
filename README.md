@@ -64,13 +64,11 @@ flags.
 If you build upon EquiReg, please consider citing:
 
 ```bibtex
-@misc{tolooshams2025equiregequivarianceregularizeddiffusion,
+@article{tolooshams2026equireg,
       title={EquiReg: Equivariance Regularized Diffusion for Inverse Problems}, 
       author={Bahareh Tolooshams and Aditi Chandrashekar and Rayhan Zirvi and Abbas Mammadov and Jiachen Yao and Chuwei Wang and Anima Anandkumar},
-      year={2025},
-      eprint={2505.22973},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2505.22973}, 
+      journal={Transactions on Machine Learning Research},
+      year={2026},
+      url={https://openreview.net/forum?id=WZlS3c78Lf}, 
 }
 ```
